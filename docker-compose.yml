@@ -1,0 +1,15 @@
+version: '3.8'
+networks:
+  dev_network:
+    name: dev_network
+    external: true
+
+services:
+  ms-api-gateway:
+    image: node
+    networks:
+      - dev_network
+    volumes:
+      - ./:/ms-api-gateway:rw
+    working_dir: /ms-api-gateway
+    command: yarn run watch-update
