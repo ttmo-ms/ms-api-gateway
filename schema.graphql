@@ -1,0 +1,64 @@
+type Query {
+  """All user information."""
+  user(
+    """Offset start line."""
+    first: Int = 0
+
+    """Count after on start line."""
+    after: Int = 0
+  ): [User]
+}
+
+type User {
+  """Unique id."""
+  id: ID
+  username: String
+  phoneNumber: String
+
+  """User home page."""
+  homepage: String
+}
+
+type Mutation {
+  """
+  Login interface.
+  
+  
+  Two Plan:
+  
+    Plan 1:
+  
+      send together 'username' and 'password'.
+  
+    Plan 2:
+  
+      step 1: send the 'phoneNumber' first, and wait receive the 'captcha'
+  
+      step 2: send together 'phoneNumber' of above sent and 'captcha' of received.
+  
+  
+  Then, backend will save 'token' in cookie.
+  """
+  login(username: String, password: String, phoneNumber: String, captcha: String): User
+
+  """
+  Register interface.
+  
+  
+  Two Plan:
+  
+    Plan 1:
+  
+      send together 'phoneNumber' and 'password'.
+  
+    Plan 2:
+  
+      step 1: send 'phoneNumber', then wait for receive 'captcha'.
+  
+      step 2: send together 'phoneNumber' and 'captcha'.
+  
+  
+  Then, will can to complete the registration.
+  """
+  register(phoneNumber: String, captcha: String, password: String): User
+}
