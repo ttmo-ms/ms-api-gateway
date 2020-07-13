@@ -2,21 +2,27 @@ import { Next } from 'koa'
 import { ExtendableContext } from 'koa'
 
 
-interface MiddlewareResult {
+interface ResponseEntity {
   code: number
   msg?: string,
 }
 
 export interface ResultContext extends ExtendableContext {
-  middlewareResult?: MiddlewareResult
+  responseEntity: (code: number, msg: string) => void
+  responseEntityData?: ResponseEntity
 }
 
 const middlewareResult = async (ctx: ResultContext, next: Next) => {
+  ctx.responseEntity = function (code: number, msg: string) {
+    this.responseEntityData = { code, msg }
+  }
+
   await next()
-  if (ctx.middlewareResult) {
+
+  if (ctx.responseEntityData) {
     ctx.body = {
       data: ctx.body.data,
-      ...ctx.middlewareResult,
+      ...ctx.responseEntityData,
     }
   }
 }
