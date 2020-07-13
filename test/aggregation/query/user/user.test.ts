@@ -25,4 +25,3 @@ export default (done: Done) => {
       done()
     })
 }
-
