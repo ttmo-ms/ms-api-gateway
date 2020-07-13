@@ -3,10 +3,10 @@ import graphqlHTTP from 'koa-graphql'
 import koaRouter from 'koa-router'
 import { GraphQLObjectType, GraphQLSchema, printSchema } from 'graphql'
 
-import user from './user/user'
-import blog from './blog/blog'
-import login from './user/login'
-import register from './user/register'
+import user from './query/user/user'
+import blog from './query/blog/blog'
+import login from './mutation/user/login'
+import register from './mutation/user/register'
 
 
 const schema = new GraphQLSchema({

@@ -1,7 +1,7 @@
 import { GraphQLFieldConfig, GraphQLList } from 'graphql'
-import { queryInterval } from '../../args_template'
-import { ResultContext } from '../../middleware/middleware_result'
-import { Blog, BlogEntity } from '../../entity'
+import { queryInterval } from '../../../args_template'
+import { ResultContext } from '../../../middleware/middleware_result'
+import { Blog, BlogEntity } from '../../../entity'
 
 
 export default ((): GraphQLFieldConfig<any, any> => ({
