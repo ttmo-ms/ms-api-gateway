@@ -1,6 +1,6 @@
 import { GraphQLFieldConfig, GraphQLString } from 'graphql'
-import { User, UserEntity } from './entity'
-import { ResultContext } from '../middleware/middleware_result'
+import { User, UserEntity } from '../../entity'
+import { ResultContext } from '../../middleware/middleware_result'
 
 
 let description = `Login interface.\n
