@@ -1,33 +1,16 @@
 import superTest from 'supertest'
 import chai from 'chai'
 import app from '../src/index'
+import { queryBlog, queryUser } from './aggregation/query'
 
 
-const expect = chai.expect
-const request = superTest(app.listen())
+export const expect = chai.expect
+export const request = superTest(app.listen())
 
-describe('Test: /aggregation', () => {
-  const aggregationUrl = '/aggregation'
-  it('test: user', done => {
-    request
-      .post(aggregationUrl)
-      .query({
-        query: `query {
-          user {
-            id
-            username
-            phoneNumber
-            homepage
-          }
-        }`,
-        variables: null,
-      })
-      .expect(200)
-      .end((err, res) => {
-        expect(res.body.data).to.be.an('object')
-        expect(res.body.data.user).to.be.an('array')
-        console.log(res.body.data)
-        done()
-      })
-  })
+export const aggregationUrl = '/aggregation'
+
+
+describe('Query', () => {
+  it('user.user', queryUser)
+  it('blog.blog', queryBlog)
 })
