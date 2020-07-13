@@ -2,6 +2,7 @@ import superTest from 'supertest'
 import chai from 'chai'
 import app from '../src/index'
 import { queryBlog, queryUser } from './aggregation/query'
+import { mutationUserLogin } from './aggregation/mutation'
 
 
 export const expect = chai.expect
@@ -11,6 +12,10 @@ export const aggregationUrl = '/aggregation'
 describe('Query', () => {
   it('user.user', queryUser)
   it('blog.blog', queryBlog)
+})
+
+describe('Mutation', () => {
+  it('user.login', mutationUserLogin)
 })
 
 
