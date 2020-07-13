@@ -1,6 +1,6 @@
 import { GraphQLFieldConfig, GraphQLString } from 'graphql'
-import { User } from './user'
-import resolve from '../../controller/aggregation/register'
+import { ResultContext } from '../middleware/middleware_result'
+import { UserEntity, User } from './entity'
 
 
 let description = `Register interface.\n
@@ -17,11 +17,14 @@ Then, will can to complete the registration.`
 
 export default ((): GraphQLFieldConfig<any, any> => ({
   description,
-  type: User,
+  type: UserEntity,
   args: {
     phoneNumber: { type: GraphQLString },
     captcha: { type: GraphQLString },
     password: { type: GraphQLString },
   },
-  resolve,
+  resolve: (_, args: any, ctx: ResultContext, info: any): User => {
+    ctx.responseEntity(0, 'ok')
+    return { id: '1', username: '123', homepage: 'homepage1' }
+  },
 }))()

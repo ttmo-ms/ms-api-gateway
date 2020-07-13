@@ -1,7 +1,7 @@
 import koa from 'koa'
 import koaRouter from 'koa-router'
 
-import aggregation from './aggregation'
+import aggregation from '../aggregation'
 
 
 const router = new koaRouter()

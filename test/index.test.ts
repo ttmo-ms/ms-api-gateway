@@ -1,10 +1,10 @@
-import supertest from 'supertest'
+import superTest from 'supertest'
 import chai from 'chai'
 import app from '../src/index'
 
 
 const expect = chai.expect
-const request = supertest(app.listen())
+const request = superTest(app.listen())
 
 describe('Test: /aggregation', () => {
   const aggregationUrl = '/aggregation'

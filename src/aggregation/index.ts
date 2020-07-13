@@ -28,13 +28,9 @@ const schema = new GraphQLSchema({
 fs.writeFile('./schema.graphql', printSchema(schema), err => console.warn(err))
 
 
-const aggregation = new koaRouter()
-
-aggregation
+export default new koaRouter()
   .all('/', graphqlHTTP({
       schema,
       graphiql: true,
     }),
   )
-
-export default aggregation

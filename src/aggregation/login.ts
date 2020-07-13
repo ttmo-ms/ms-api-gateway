@@ -1,5 +1,6 @@
 import { GraphQLFieldConfig, GraphQLString } from 'graphql'
-import { User } from './user'
+import { User, UserEntity } from './entity'
+import { ResultContext } from '../middleware/middleware_result'
 
 
 let description = `Login interface.\n
@@ -16,11 +17,15 @@ Then, backend will save 'token' in cookie.`
 
 export default ((): GraphQLFieldConfig<any, any> => ({
   description,
-  type: User,
+  type: UserEntity,
   args: {
     username: { type: GraphQLString },
     password: { type: GraphQLString },
     phoneNumber: { type: GraphQLString },
     captcha: { type: GraphQLString },
+  },
+  resolve: (_, args: any, ctx: ResultContext, info: any): User => {
+    ctx.responseEntity(0, 'ok')
+    return { id: '1', username: '123', homepage: 'homepage1' }
   },
 }))()
