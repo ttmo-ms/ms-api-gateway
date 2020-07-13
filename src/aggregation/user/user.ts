@@ -19,5 +19,4 @@ export default ((): GraphQLFieldConfig<any, any> => ({
       { id: '4', username: '1234', homepage: 'homepage2' },
     ]
   },
-}))
-()
+}))()
