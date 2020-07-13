@@ -1,5 +1,5 @@
 import { Done } from 'mocha'
-import { aggregationUrl, expect, request } from '../../../index.test'
+import { aggregationUrl, expect, request, showTitle } from '../../../index.test'
 
 
 const query = `
@@ -13,6 +13,7 @@ query {
 }`
 
 export default (done: Done) => {
+  showTitle('query user.')
   request
     .post(aggregationUrl)
     .query({ query, variables: null })
