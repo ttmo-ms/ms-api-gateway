@@ -3,9 +3,10 @@ import graphqlHTTP from 'koa-graphql'
 import koaRouter from 'koa-router'
 import { GraphQLObjectType, GraphQLSchema, printSchema } from 'graphql'
 
-import user from './user'
-import login from './login'
-import register from './register'
+import user from './user/user'
+import blog from './blog/blog'
+import login from './user/login'
+import register from './user/register'
 
 
 const schema = new GraphQLSchema({
@@ -13,6 +14,7 @@ const schema = new GraphQLSchema({
     name: 'Query',
     fields: {
       user,
+      blog,
     },
   }),
   mutation: new GraphQLObjectType({
@@ -25,7 +27,7 @@ const schema = new GraphQLSchema({
 })
 
 // Auto generate schema.graphql file.
-fs.writeFile('./schema.graphql', printSchema(schema), err => console.warn(err))
+fs.writeFile('./schema.graphql', printSchema(schema), err => err && console.warn(err))
 
 
 export default new koaRouter()

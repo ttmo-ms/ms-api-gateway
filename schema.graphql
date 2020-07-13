@@ -7,6 +7,13 @@ type Query {
     """Count after on start line."""
     after: Int = 0
   ): [User]
+  blog(
+    """Offset start line."""
+    first: Int = 0
+
+    """Count after on start line."""
+    after: Int = 0
+  ): [Blog]
 }
 
 type User {
@@ -17,6 +24,23 @@ type User {
 
   """User home page."""
   homepage: String
+}
+
+type Blog {
+  id: ID
+  title: String
+  typeTags: [BlogTag]
+  anther: User
+  readCount: Int
+  favoriteCount: Int
+  createDateTime: String
+  content: String
+}
+
+type BlogTag {
+  id: ID
+  name: String
+  url: String
 }
 
 type Mutation {
