@@ -23,3 +23,7 @@ describe('Mutation', () => {
 export const showTitle = function (text: string) {
   console.warn('===> ' + text)
 }
+
+export const showJson = function (obj: string, space: number = 2) {
+  console.log(JSON.stringify(obj, null, space))
+}
