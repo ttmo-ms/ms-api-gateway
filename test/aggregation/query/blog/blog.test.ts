@@ -15,7 +15,6 @@ query {
     anther {
       id
       username
-      phoneNumber
       homepage
     }
     readCount
