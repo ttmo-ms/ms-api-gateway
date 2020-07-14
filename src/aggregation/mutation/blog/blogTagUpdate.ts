@@ -1,4 +1,4 @@
-import { GraphQLFieldConfig, GraphQLID, GraphQLList, GraphQLNonNull, GraphQLString } from 'graphql'
+import { GraphQLFieldConfig, GraphQLID, GraphQLNonNull, GraphQLString } from 'graphql'
 import validate from 'validate'
 import { BlogTag, BlogTagEntity } from '../../../entity'
 import { ResultContext } from '../../../middleware/middleware_result'
@@ -27,9 +27,8 @@ export default ((): GraphQLFieldConfig<any, any> => ({
   type: BlogTagEntity,
   args: {
     id: { type: GraphQLNonNull(GraphQLID) },
-    title: { type: GraphQLNonNull(GraphQLString) },
-    content: { type: GraphQLNonNull(GraphQLString) },
-    typeTag: { type: GraphQLList(GraphQLString) },
+    name: { type: GraphQLString },
+    url: { type: GraphQLString },
   },
   resolve: (_, args: any, ctx: ResultContext, info: any): BlogTag => {
     if (argsCheck.validate(args).length) {
