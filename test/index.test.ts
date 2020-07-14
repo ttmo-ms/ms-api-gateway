@@ -2,7 +2,13 @@ import superTest from 'supertest'
 import chai from 'chai'
 import app from '../src/index'
 import { queryBlog, queryUser } from './aggregation/query'
-import { mutationBlogCreate, mutationBlogUpdate, mutationUserLogin, mutationUserRegister } from './aggregation/mutation'
+import {
+  mutationBlogCreate,
+  mutationBlogDelete,
+  mutationBlogUpdate,
+  mutationUserLogin,
+  mutationUserRegister,
+} from './aggregation/mutation'
 
 
 export const expect = chai.expect
@@ -19,6 +25,7 @@ describe('Mutation', () => {
   it('user.register', mutationUserRegister)
   it('blog.blogCreate', mutationBlogCreate)
   it('blog.blogUpdate', mutationBlogUpdate)
+  it('blog.blogDelete', mutationBlogDelete)
 })
 
 
