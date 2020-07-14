@@ -25,7 +25,6 @@ export default ((): GraphQLFieldConfig<any, any> => ({
     url: { type: GraphQLNonNull(GraphQLString) },
   },
   resolve: (_, args: any, ctx: ResultContext, info: any): BlogTag => {
-    console.log(args)
     if (argsCheck.validate(args).length) {
       ctx.responseEntity(1000, 'args check fail.')
       return {}
