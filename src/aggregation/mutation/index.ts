@@ -5,6 +5,7 @@ import blogCreate from './blog/blogCreate'
 import blogUpdate from './blog/blogUpdate'
 import blogDelete from './blog/blogDelete'
 import blogTagCreate from './blog/blogTagCreate'
+import blogTagUpdate from './blog/blogTagUpdate'
 
 
 export default new GraphQLObjectType({
@@ -16,5 +17,6 @@ export default new GraphQLObjectType({
     blogUpdate,
     blogDelete,
     blogTagCreate,
+    blogTagUpdate,
   },
 })
