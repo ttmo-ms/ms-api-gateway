@@ -9,7 +9,7 @@ mutation {
   ) {
     id
     title
-    typeTags {
+    typeTag {
       id
       name
       url
@@ -39,8 +39,8 @@ export default (done: Done) => {
       expect(data).to.be.an('object')
       expect(data.blog)
         .to.be.an('object')
-        .keys(['id', 'title', 'typeTags', 'anther', 'readCount', 'favoriteCount', 'createDateTime', 'content'])
-      expect(data.blog.typeTags).to.be.an('array')
+        .keys(['id', 'title', 'typeTag', 'anther', 'readCount', 'favoriteCount', 'createDateTime', 'content'])
+      expect(data.blog.typeTag).to.be.an('array')
       expect(data.blog.anther).to.be.an('object').keys('id', 'username', 'homepage')
       showJson(data)
       done()

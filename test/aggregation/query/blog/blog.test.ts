@@ -7,7 +7,7 @@ query {
   blog{
     id
     title
-    typeTags {
+    typeTag {
       id
       name
       url
@@ -39,7 +39,7 @@ export default (done: Done) => {
       if (data.blog.length > 0) {
         expect(data.blog[0])
           .keys([
-            'id', 'title', 'typeTags', 'anther',
+            'id', 'title', 'typeTag', 'anther',
             'readCount', 'favoriteCount',
             'createDateTime', 'updateDateTime', 'content',
           ])

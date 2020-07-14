@@ -20,7 +20,7 @@ const argsCheck = new validate({
     required: true,
     length: { min: 1 },
   },
-  typeTags: {
+  typeTag: {
     type: Array,
     each: {
       type: String,
@@ -36,7 +36,7 @@ export default ((): GraphQLFieldConfig<any, any> => ({
     title: { type: GraphQLNonNull(GraphQLString) },
     anther: { type: GraphQLNonNull(GraphQLID) },
     content: { type: GraphQLNonNull(GraphQLString) },
-    typeTags: { type: GraphQLList(GraphQLString) },
+    typeTag: { type: GraphQLList(GraphQLString) },
   },
   resolve: (_, args: any, ctx: ResultContext, info: any): Blog => {
     if (argsCheck.validate(args).length) {
@@ -53,7 +53,7 @@ export default ((): GraphQLFieldConfig<any, any> => ({
         homepage: 'www.joverzhang.com',
         phoneNumber: '13712345678',
       },
-      typeTags: [
+      typeTag: [
         {
           id: '1',
           name: 'js',

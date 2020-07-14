@@ -22,7 +22,7 @@ export default ((): GraphQLFieldConfig<any, any> => ({
           homepage: 'www.joverzhang.com',
           phoneNumber: '13712345678',
         },
-        typeTags: [{
+        typeTag: [{
           id: '1',
           name: 'js',
           url: 'www.joverzhang.com',
@@ -41,7 +41,7 @@ export default ((): GraphQLFieldConfig<any, any> => ({
           homepage: 'www.joverzhang.com',
           phoneNumber: '13712345678',
         },
-        typeTags: [{
+        typeTag: [{
           id: '2',
           name: 'python',
           url: 'www.joverzhang.com',

@@ -7,7 +7,7 @@ import { UserEntity } from './index'
 export interface Blog {
   id?: string
   title?: string
-  typeTags?: Array<BlogTag>
+  typeTag?: Array<BlogTag>
   anther?: User
   readCount?: number
   favoriteCount?: number
@@ -21,7 +21,7 @@ const BlogEntity = new GraphQLObjectType({
   fields: {
     id: { type: GraphQLID },
     title: { type: GraphQLString },
-    typeTags: { type: GraphQLList(BlogTagEntity) },
+    typeTag: { type: GraphQLList(BlogTagEntity) },
     anther: { type: UserEntity },
     readCount: { type: GraphQLInt },
     favoriteCount: { type: GraphQLInt },
