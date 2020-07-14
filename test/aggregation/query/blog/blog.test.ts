@@ -1,5 +1,5 @@
 import { Done } from 'mocha'
-import { aggregationUrl, expect, request, showTitle } from '../../../index.test'
+import { aggregationUrl, expect, request, showJson, showTitle } from '../../../index.test'
 
 
 const query = `
@@ -32,10 +32,21 @@ export default (done: Done) => {
     .query({ query, variables: null })
     .expect(200)
     .end((err, res) => {
-      expect(res.body.code).equal(0)
-      expect(res.body.data).to.be.an('object')
-      expect(res.body.data.blog).to.be.an('array')
-      console.log(res.body.data)
+      const { data, code } = res.body
+      expect(code).equal(0)
+      expect(data).to.be.an('object')
+      expect(data.blog).to.be.an('array')
+      if (data.blog.length > 0) {
+        expect(data.blog[0])
+          .keys([
+            'id', 'title', 'typeTags', 'anther',
+            'readCount', 'favoriteCount',
+            'createDateTime', 'updateDateTime', 'content',
+          ])
+      } else {
+        showTitle('Array is empty.')
+      }
+      showJson(data)
       done()
     })
 }
