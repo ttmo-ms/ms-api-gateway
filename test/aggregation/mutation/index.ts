@@ -4,6 +4,7 @@ import mutationBlogCreate from './blog/blogCreate'
 import mutationBlogUpdate from './blog/blogUpdate'
 import mutationBlogDelete from './blog/blogDelete'
 import mutationBlogTagCreate from './blog/blogTagCreate'
+import mutationBlogTagUpdate from './blog/blogTagUpdate'
 
 
 export {
@@ -13,4 +14,5 @@ export {
   mutationBlogUpdate,
   mutationBlogDelete,
   mutationBlogTagCreate,
+  mutationBlogTagUpdate,
 }
