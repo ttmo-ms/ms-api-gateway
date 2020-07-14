@@ -15,7 +15,8 @@
     "koa": "^2.13.0",
     "koa-body": "^4.2.0",
     "koa-graphql": "^0.8.0",
-    "koa-router": "^9.1.0"
+    "koa-router": "^9.1.0",
+    "validate": "^5.1.0"
   },
   "devDependencies": {
     "@types/chai": "^4.2.11",
