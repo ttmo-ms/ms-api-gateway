@@ -14,6 +14,13 @@ type Query {
     """Count after on start line."""
     after: Int = 0
   ): [Blog]
+  blogTag(
+    """Offset start line."""
+    first: Int = 0
+
+    """Count after on start line."""
+    after: Int = 0
+  ): [BlogTag]
 }
 
 type User {
