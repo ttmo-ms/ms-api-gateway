@@ -2,6 +2,7 @@ import { GraphQLObjectType } from 'graphql'
 import login from './user/login'
 import register from './user/register'
 import blogCreate from './blog/blogCreate'
+import blogUpdate from './blog/blogUpdate'
 
 
 export default new GraphQLObjectType({
@@ -10,5 +11,6 @@ export default new GraphQLObjectType({
     login,
     register,
     blogCreate,
+    blogUpdate,
   },
 })
