@@ -19,7 +19,7 @@ export default ((): GraphQLFieldConfig<any, any> => ({
           id: '3',
           username: 'joverZhang',
           homepage: 'www.joverzhang.com',
-          phoneNumber: '13719445996',
+          phoneNumber: '13712345678',
         },
         typeTags: [{
           id: '1',
@@ -37,7 +37,7 @@ export default ((): GraphQLFieldConfig<any, any> => ({
           id: '3',
           username: 'joverZhang',
           homepage: 'www.joverzhang.com',
-          phoneNumber: '13719445996',
+          phoneNumber: '13712345678',
         },
         typeTags: [{
           id: '2',

@@ -4,7 +4,7 @@ import { aggregationUrl, expect, request, showTitle } from '../../../index.test'
 
 const query = `
 mutation {
-  user: register ( phoneNumber: "137123456789", password: "test123456" ) {
+  user: register ( phoneNumber: "13712345678", password: "test123456" ) {
     id
     username
     phoneNumber
