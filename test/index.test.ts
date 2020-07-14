@@ -1,7 +1,7 @@
 import superTest from 'supertest'
 import chai from 'chai'
 import app from '../src/index'
-import { queryBlog, queryUser } from './aggregation/query'
+import { queryBlog, queryBlogTag, queryUser } from './aggregation/query'
 import {
   mutationBlogCreate,
   mutationBlogDelete,
@@ -18,6 +18,7 @@ export const aggregationUrl = '/aggregation'
 describe('Query', () => {
   it('user.user', queryUser)
   it('blog.blog', queryBlog)
+  it('blog.blogTag', queryBlogTag)
 })
 
 describe('Mutation', () => {
