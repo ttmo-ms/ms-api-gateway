@@ -29,6 +29,7 @@ export default ((): GraphQLFieldConfig<any, any> => ({
         readCount: 10,
         favoriteCount: 3,
         createDateTime: '2019-01-01 17:20:58',
+        updateDateTime: '2019-01-02 17:20:58',
         content: 'function () { return }',
       }, {
         id: '2',
@@ -47,6 +48,7 @@ export default ((): GraphQLFieldConfig<any, any> => ({
         readCount: 10,
         favoriteCount: 3,
         createDateTime: '2020-01-01 17:20:58',
+        updateDateTime: '2020-01-02 17:20:58',
         content: 'def f(): return',
       },
     ]

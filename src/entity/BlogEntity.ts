@@ -12,6 +12,7 @@ export interface Blog {
   readCount?: number
   favoriteCount?: number
   createDateTime?: string
+  updateDateTime?: string
   content?: string
 }
 
@@ -25,6 +26,7 @@ const BlogEntity = new GraphQLObjectType({
     readCount: { type: GraphQLInt },
     favoriteCount: { type: GraphQLInt },
     createDateTime: { type: GraphQLString },
+    updateDateTime: { type: GraphQLString },
     content: { type: GraphQLString },
   },
 })

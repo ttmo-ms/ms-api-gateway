@@ -20,6 +20,7 @@ query {
     readCount
     favoriteCount
     createDateTime
+    updateDateTime
     content
   }
 }`

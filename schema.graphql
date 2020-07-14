@@ -34,6 +34,7 @@ type Blog {
   readCount: Int
   favoriteCount: Int
   createDateTime: String
+  updateDateTime: String
   content: String
 }
 
