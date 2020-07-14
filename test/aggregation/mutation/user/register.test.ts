@@ -1,5 +1,5 @@
 import { Done } from 'mocha'
-import { aggregationUrl, expect, request, showTitle } from '../../../index.test'
+import { aggregationUrl, expect, request, showJson, showTitle } from '../../../index.test'
 
 
 const query = `
@@ -20,11 +20,12 @@ export default (done: Done) => {
     .query({ query, variables: null })
     .expect(200)
     .end((err, res) => {
-      expect(res.body.code).equal(0)
-      expect(res.body.data).to.be.an('object')
-      expect(res.body.data.user).to.be.an('object')
-      expect(res.body.data.user).keys(['id', 'username', 'phoneNumber', 'homepage'])
-      console.log(res.body.data)
+      const { code, data } = res.body
+      expect(code).equal(0)
+      expect(data).to.be.an('object')
+      expect(data.user).to.be.an('object')
+      expect(data.user).keys(['id', 'username', 'phoneNumber', 'homepage'])
+      showJson(data)
       done()
     })
 }
