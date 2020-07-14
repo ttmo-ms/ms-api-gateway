@@ -3,8 +3,8 @@ import { GraphQLID, GraphQLObjectType, GraphQLString } from 'graphql'
 
 export interface BlogTag {
   id?: string
-  name: string
-  url: string
+  name?: string
+  url?: string
 }
 
 const BlogTagEntity = new GraphQLObjectType({

@@ -86,4 +86,5 @@ type Mutation {
   blogCreate(title: String!, anther: ID!, content: String!, typeTag: [String]): Blog
   blogUpdate(id: ID!, title: String!, content: String!, typeTag: [String]): Blog
   blogDelete(id: ID!): Blog
+  blogTagCreate(name: String!, url: String!): BlogTag
 }
