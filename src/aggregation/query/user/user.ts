@@ -1,16 +1,17 @@
 import { GraphQLFieldConfig, GraphQLList } from 'graphql'
-import { queryInterval } from '../../../args_template'
 import { User, UserEntity } from '../../../entity'
 import { ResultContext } from '../../../middleware/middleware_result'
+import { FilterInputEntity } from '../../../entity/input'
 
 
 export default ((): GraphQLFieldConfig<any, any> => ({
   description: 'All user information.',
   type: GraphQLList(UserEntity),
   args: {
-    ...queryInterval,
+    filter: { type: FilterInputEntity },
   },
-  resolve: (_, args: any, ctx: ResultContext, info: any): Array<User> => {
+  resolve: (_, { filter }: any, ctx: ResultContext, info: any): Array<User> => {
+    console.log(filter)
     ctx.responseEntity(0, 'ok')
     return [
       { id: '1', username: '123', homepage: 'homepage1' },

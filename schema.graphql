@@ -1,26 +1,8 @@
 type Query {
   """All user information."""
-  user(
-    """Offset start line."""
-    first: Int = 0
-
-    """Count after on start line."""
-    after: Int = 0
-  ): [User]
-  blog(
-    """Offset start line."""
-    first: Int = 0
-
-    """Count after on start line."""
-    after: Int = 0
-  ): [Blog]
-  blogTag(
-    """Offset start line."""
-    first: Int = 0
-
-    """Count after on start line."""
-    after: Int = 0
-  ): [BlogTag]
+  user(filter: Filter): [User]
+  blog(filter: Filter): [Blog]
+  blogTag(filter: Filter, all: Boolean = true): [BlogTag]
 }
 
 type User {
@@ -31,6 +13,14 @@ type User {
 
   """User home page."""
   homepage: String
+}
+
+input Filter {
+  """Offset start line."""
+  first: Int!
+
+  """Count after on start line."""
+  after: Int!
 }
 
 type Blog {
