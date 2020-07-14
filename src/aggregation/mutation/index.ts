@@ -1,6 +1,7 @@
 import { GraphQLObjectType } from 'graphql'
 import login from './user/login'
 import register from './user/register'
+import blogCreate from './blog/blogCreate'
 
 
 export default new GraphQLObjectType({
@@ -8,5 +9,6 @@ export default new GraphQLObjectType({
   fields: {
     login,
     register,
+    blogCreate,
   },
 })

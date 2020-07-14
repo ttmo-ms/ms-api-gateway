@@ -85,4 +85,5 @@ type Mutation {
   Then, will can to complete the registration.
   """
   register(phoneNumber: String, captcha: String, password: String): User
+  blogCreate(title: String!, anther: ID!, content: String!, typeTags: [String]): Blog
 }
