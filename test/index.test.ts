@@ -5,6 +5,7 @@ import { queryBlog, queryBlogTag, queryUser } from './aggregation/query'
 import {
   mutationBlogCreate,
   mutationBlogDelete,
+  mutationBlogTagCreate,
   mutationBlogUpdate,
   mutationUserLogin,
   mutationUserRegister,
@@ -27,6 +28,7 @@ describe('Mutation', () => {
   it('blog.blogCreate', mutationBlogCreate)
   it('blog.blogUpdate', mutationBlogUpdate)
   it('blog.blogDelete', mutationBlogDelete)
+  it('blog.blogTagCreate', mutationBlogTagCreate)
 })
 
 
