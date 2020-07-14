@@ -4,11 +4,11 @@ import { aggregationUrl, expect, request, showJson, showTitle } from '../../../i
 
 const query = `
 mutation {
-  blogTag (
+  blogTag: blogTagUpdate (
     id: "1"
     name: "js"
     url: "www.joverzhang.com"
-  ): {
+  ) {
     id
     name
     url

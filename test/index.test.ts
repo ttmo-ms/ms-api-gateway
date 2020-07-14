@@ -6,6 +6,7 @@ import {
   mutationBlogCreate,
   mutationBlogDelete,
   mutationBlogTagCreate,
+  mutationBlogTagUpdate,
   mutationBlogUpdate,
   mutationUserLogin,
   mutationUserRegister,
@@ -29,6 +30,7 @@ describe('Mutation', () => {
   it('blog.blogUpdate', mutationBlogUpdate)
   it('blog.blogDelete', mutationBlogDelete)
   it('blog.blogTagCreate', mutationBlogTagCreate)
+  it('blog.blogTagUpdate', mutationBlogTagUpdate)
 })
 
 
