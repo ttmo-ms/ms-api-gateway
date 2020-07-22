@@ -11,10 +11,12 @@ export default ((): GraphQLFieldConfig<any, any> => ({
     filter: { type: FilterInputEntity },
   },
   resolve: (_, { filter }: any, ctx: ResultContext, info: any): Array<User> => {
+    console.log('cookie: '+ ctx.cookies.get('test'))
+    ctx.cookies.set('test', 'jover', { maxAge: 60 * 1000 })
     console.log(filter)
     ctx.responseEntity(0, 'ok')
     return [
-      { id: '1', username: '123', homepage: 'homepage1' },
+      { id: '1', username: '张三', homepage: 'homepage1' },
       { id: '2', username: '1234', homepage: 'homepage2' },
       { id: '3', username: '1234', homepage: 'homepage2' },
       { id: '4', username: '1234', homepage: 'homepage2' },

@@ -8,9 +8,9 @@ networks:
 services:
   ms-api-gateway:
     image: node
+    working_dir: /ms-api-gateway
+    command: yarn run watch-update
     networks:
       - dev_network
     volumes:
       - ./:/ms-api-gateway:rw
-    working_dir: /ms-api-gateway
-    command: yarn run watch-update
